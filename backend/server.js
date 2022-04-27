@@ -8,7 +8,7 @@ const port = process.env.PORT;
 
 //contollers
 const fetchUsersData = require("./controllers/fetchUsersData");
-const { createUser } = require("./controllers/createUser");
+const createUser = require("./controllers/createUser");
 
 //models
 const User = require("./models/user");
@@ -39,10 +39,5 @@ app.listen(port, () => {
 
 app.get("/", async (req, res) => {
   const query = await User.find();
-  return res.status(200).json(query);
-});
-
-app.get("/api/users", async (req, res) => {
-  const query = await User.find().select("name -_id");
   return res.status(200).json(query);
 });

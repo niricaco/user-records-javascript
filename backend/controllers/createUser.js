@@ -26,5 +26,4 @@ const createUser = (users) => {
   });
 };
 
-exports.createUser = createUser;
-/* module.exports = createUser; */
+module.exports = createUser;
