@@ -32,13 +32,16 @@ const queryAllUsers = async (req, res) => {
 };
 
 const queryUsersById = async (req, res) => {
-  console.log(req.params.id);
   const id = req.params.id;
   const query = await User.findOne({ id: id });
   return res.status(200).json(query);
 };
 
-const queryUsersByUsername = async (req, res) => {};
+const queryUsersByUsername = async (req, res) => {
+  const username = req.params.username;
+  const query = await User.findOne({ username: username });
+  return res.status(200).json(query);
+};
 
 exports.queryAllUsers = queryAllUsers;
 exports.queryUsersById = queryUsersById;

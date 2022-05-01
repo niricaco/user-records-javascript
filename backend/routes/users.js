@@ -7,7 +7,7 @@ const {
 } = require("../controllers/queryContoller");
 
 router.get("/", queryAllUsers);
-router.get("/api/users/id/:id", queryUsersById);
-router.get("/api/users/username/:username", queryUsersByUsername);
+router.get("/id/:id", queryUsersById);
+router.get("/username/:username", queryUsersByUsername);
 
 module.exports = router;
